@@ -1,0 +1,105 @@
+/* Reset básico para quitar márgenes y padding predeterminados */
+body, h1, table, input, select, button, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general para el contenedor principal */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para la barra de búsqueda */
+#searchBar {
+    margin-top: 20px;
+    width: 300px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+/* Estilo para la tabla */
+table {
+    width: 80%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Estilo para los inputs y selects */
+input[type="text"],
+input[type="number"],
+select {
+    width: 300px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+/* Estilo para el botón */
+button {
+    padding: 12px 20px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el contenedor de cálculo de precio */
+#resultado {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#mensajeProductoAgotado {
+    margin-top: 20px;
+    color: red;
+    display: none
+}
+
+/* Estilo para el área de mensajes */
+#mensajeError {
+    margin-top: 20px;
+    color: red;
+}
+
+/* Estilo para el formulario de nuevo producto */
+#formContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    display: none;
+}
+
+/* Estilo para SweetAlert */
+#swal2-container {
+    z-index: 1002;
+}
+
+/* Estilo para el overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
+}

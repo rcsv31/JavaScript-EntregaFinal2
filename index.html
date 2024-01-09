@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Precios</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.2/awesomplete.min.css">
+</head>
+
+<body>
+
+    <h1>Lista de Productos</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody id="productList">
+            <!-- Aquí se insertarán los productos dinámicamente -->
+        </tbody>
+    </table>
+
+    <input id="searchBar" class="awesomplete" data-list="cluedo,monopoly,risk,ajedrez" placeholder="Buscar producto...">
+
+    <div>
+        <select id="pais">
+            <option value="espana">España</option>
+            <option value="francia">Francia</option>
+            <option value="portugal">Portugal</option>
+            <option value="italia">Italia</option>
+        </select>
+
+        <select id="moneda">
+            <option value="eur">Euros</option>
+            <option value="usd">Dólares</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="number" id="unidades" placeholder="Unidades" min="1" value="1">
+        <input type="text" id="codigoDescuento" placeholder="Código descuento">
+    </div>
+
+    <button id="calcularPrecioBtn">Calcular Precio</button>
+
+    <div id="contenedorMensajeError"></div>
+    <div id="mensajeError"></div>
+    <div id="mensajeProductoAgotado">Producto agotado</div>
+
+    <div id="resultado"></div>
+
+    <button id="agregarProductoBtn">Agregar Nuevo Producto al Catálogo</button>
+
+    <div id="overlay"></div>
+    <div id="formContainer" style="display: none;">
+        <h2>Añadir Producto</h2>
+        <input type="text" id="nombreProductoNuevo" placeholder="Nombre del producto">
+        <input type="number" id="precioProductoNuevo" placeholder="Precio">
+
+        <select id="monedaProductoNuevo">
+            <option value="eur">€ (Euros)</option>
+            <option value="usd">$ (Dólares)</option>
+        </select>
+
+        <input type="number" id="stockProductoNuevo" placeholder="Stock">
+        <button id="guardarProductoBtn">Guardar Producto</button>
+        <button id="cancelarBtn">Cancelar</button>
+    </div>
+
+    <div id="formularioProducto" style="display: none;"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.2/awesomplete.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
