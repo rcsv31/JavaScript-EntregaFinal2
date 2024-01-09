@@ -34,7 +34,6 @@ async function actualizarTablaMoneda(moneda) {
         celdaNombre.textContent = producto.nombre;
         fila.appendChild(celdaNombre);
 
-
         let precioMostrar = producto.precio;
 
         if (moneda === "usd") {
@@ -56,8 +55,6 @@ async function actualizarTablaMoneda(moneda) {
         listaProductos.appendChild(fila);
     }
 }
-
-
 
 // La función obtenerTipoCambio ya está preparada para obtener el tipo de cambio desde euros a dólares.
 
@@ -94,7 +91,6 @@ let productoSeleccionado = productos.find(producto => producto.nombre === nombre
     document.getElementById("mensajeProductoAgotado").style.display = "none";
 }
 
-
     // Verifica si la cantidad seleccionada supera el stock disponible
     if (unidades > productoSeleccionado.stock) {
         document.getElementById("mensajeError").innerText = `El stock disponible para este producto es de ${productoSeleccionado.stock} unidades.`;
@@ -124,7 +120,6 @@ let precioConIVA = precioSinIVA * (1 + pais.impuesto);  // Aplicar IVA
 if (moneda === "usd") {
     precioConIVA = productoSeleccionado.precioUSD ? productoSeleccionado.precioUSD * unidades * (1 + pais.impuesto) : precioConIVA;
 }
-
 
     let codigoDescuento = document.getElementById("codigoDescuento").value;
     if (!codigoDescuento) {
@@ -156,7 +151,6 @@ if (moneda === "usd") {
         confirmButtonText: 'Entendido'
     });
 }
-
 
 function mostrarPrecios(precioSinIVA, precioConIVA, precioConDescuento, moneda) {
     let mensaje = `Precio total sin IVA: ${formatoPrecio(precioSinIVA, moneda)}<br>
